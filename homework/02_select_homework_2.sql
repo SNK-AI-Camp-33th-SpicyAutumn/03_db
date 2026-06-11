@@ -35,3 +35,25 @@ where
     JOB_CODE = 'J6'
 order by
     SALARY desc;
+
+
+select
+    ep.EMP_NAME 직원명,
+    j.JOB_NAME 직급명,
+    ep.SALARY 급여,
+    ep.EMP_ID 사원번호,
+    ep.EMAIL 이메일,
+    ep.PHONE 전화번호,
+    ep.HIRE_DATE 입사일
+from
+    employee ep
+join
+    job j
+on
+    ep.JOB_CODE = j.JOB_CODE
+where
+    ep.ENT_YN = 'N'
+    and
+    j.JOB_NAME = '대리'
+order by
+    ep.SALARY desc;
